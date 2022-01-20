@@ -1,0 +1,624 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --dark-color: #635bff;
+  --light-color:#80e9ff;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  height: 100vh;
+  background: #dfdfdf;
+}
+
+#giant-wheel {
+  animation: wheel 12s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes wheel {
+  from {
+    transform: rotateZ(360deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+#wheel-cabins {
+  animation: cabins 12s linear infinite;
+  transform-origin: top;
+}
+
+@keyframes cabins {
+  0%, 
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+#left-tree, #right-tree {
+  animation: trees 2s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes trees {
+  0%, 
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+#ballon-man {
+  animation: man 3s linear infinite;
+  transform-box: fill-box;
+}
+
+@keyframes man {
+  0%, 
+  100% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+}
+
+#man2 {
+  animation: man2 3s linear infinite;
+  transform-box: fill-box;
+}
+
+@keyframes man2 {
+  0%, 
+  100% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+}
+
+#balloon {
+  animation: balloon 2s linear infinite;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+@keyframes balloon {
+  0%, 
+  100% {
+    transform: rotate(3deg);
+    transform: scale(1.1);
+  }
+  50% {
+    transform: rotate(-3deg);
+    transform: scale(1);
+  }
+}
+
+/* speech*/
+
+#backgroundCircles {
+  animation: circlerun 12s linear infinite;
+  transform-box: fill-box;
+  transform-origin: bottom;
+
+}
+
+@keyframes circlerun {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+#backgroundCircles #Vector{
+  fill: rgba(63, 81, 181, 0.6);
+}
+
+#backgroundCircles #Vector_2{
+  fill: rgba(0, 188, 212, 0.6);
+}
+
+#backgroundCircles #Vector_3{
+  fill: rgba(103, 58, 183, 0.6);
+}
+
+#cpTexts path {
+  opacity: 0;
+  animation: dropIn 8s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--order) * 500ms);
+  animation-iteration-count: infinite;
+}
+
+@keyframes dropIn {
+  20% {
+    opacity: 0;
+    transform: translateZ(-20%);
+  }
+
+  30%, 100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+
+}
+
+#womanRightHand{
+  animation: womanHand 5s linear infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes womanHand {
+  20% {
+    transform: translateY(2%);
+  }
+
+  30%, 100% {
+    transform: translateY(0%);
+  }
+
+}
+
+#manLeftHand{
+  animation: manHand 5s linear infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes manHand {
+  20% {
+    transform: translateY(2%);
+  }
+
+  30%, 100% {
+    transform: translateY(0%);
+  }
+
+}
+
+#mirco{
+  animation: mirco 5s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes mirco {
+  20% {
+    transform: translateY(2%);
+  }
+
+  30%, 100% {
+    transform: translateY(0%);
+  }
+
+}
+
+/* DATA*/
+
+#whiteBoardLine path,
+#whiteBoardCircle path,
+#whiteBoardBarchart path
+{
+  opacity: 0;
+  animation: dropInlineinboard 8s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--order) * 500ms);
+  animation-iteration-count: infinite;
+}
+
+@keyframes dropInlineinboard {
+  20% {
+    opacity: 0;
+    transform: translateZ(-20%);
+  }
+
+  30%, 100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+
+}
+
+#centerManHands path {
+  animation: centermanHand 8s infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes centermanHand {
+  20% {
+    transform: translateY(5%);
+  }
+
+  30%, 100% {
+    transform: translateY(0%);
+  }
+
+}
+
+#leftwomanHands path {
+  animation: womanHand 5s infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes womanHand {
+  0%, 
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+
+}
+
+#womanImage {
+  animation: womanimagerotate 5s infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes womanimagerotate {
+  0%, 
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+
+}
+
+#womanImage #linedot path{
+  opacity: 0;
+  animation: dropInlineinowomanimage 5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--order) * 500ms);
+  animation-iteration-count: infinite;
+}
+
+@keyframes dropInlineinowomanimage{
+  20% {
+    opacity: 0;
+    transform: translateZ(-20%);
+  }
+
+  30%, 100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+
+#womanHair {
+  animation: flowHair 5s infinite;
+  transform: top;
+}
+
+@keyframes flowHair {
+  0%, 
+  100% {
+    transform: rotateZ(0.5deg);
+  }
+  50% {
+    transform: rotateZ(-0.5deg);
+  }
+}
+
+#manRighthands{
+  animation: rightmanhand 5s infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes rightmanhand {
+  0%, 
+  100% {
+    transform: rotateZ(2deg);
+  }
+  50% {
+    transform: rotateZ(-2deg);
+  }
+}
+
+#manLefthands{
+  animation: leftmanhand 5s infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes leftmanhand {
+  0%, 
+  100% {
+    transform: rotateZ(5deg);
+  }
+  50% {
+    transform: rotateZ(-5deg);
+  }
+}
+
+#manImage{
+  animation: rightmanImage 5s infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes rightmanImage {
+  0%, 
+  100% {
+    transform: rotateZ(5deg);
+  }
+  50% {
+    transform: rotateZ(-5deg);
+  }
+}
+
+#manImage #pieChart path{
+  opacity: 0;
+  animation: dropInlineinomanpie 5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--order) * 500ms);
+  animation-iteration-count: infinite;
+  transform-origin: center;
+
+}
+
+@keyframes dropInlineinomanpie{
+  20% {
+    opacity: 0;
+    transform: rotateZ(12deg);
+  }
+
+  30%, 100% {
+    opacity: 1;
+    transform: rotateZ(0deg);
+  }
+}
+
+#manImage #manItem path,
+#manImage #manLine path
+{
+  opacity: 0;
+  animation: dropInlineinomanpie 5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--order) * 500ms);
+  animation-iteration-count: infinite;
+}
+
+@keyframes dropInlineinomanpie{
+  20% {
+    opacity: 0;
+    transform: translateZ(-20%)
+  }
+
+  30%, 100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+/* jogging*/
+#jogtreeright,
+#jogtreeleft
+{
+  animation: joggingTree 5s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes joggingTree {
+  0%, 
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+.jogging #upLeaves path, 
+.jogging #downLeaves path {
+  animation: leavelflow 5s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes leavelflow {
+  0% {transform:translate(450px,200px) rotate(720deg)}
+  40% {transform:translate(100px,100px) rotate(1080deg)}
+  80% {transform:translate(0,0) rotate(1440deg)}
+ 100% {transform:translate(0,0) rotate(1440deg)}
+}
+
+.jogging #downLeaf {
+  animation: leafflow 5s linear infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes leafflow {
+  0%, 
+  100% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+.jogging #legs #leftLeg {
+  animation: joggingleft 2s linear infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes joggingleft  {
+  0%       {transform: rotate(0deg);}
+	40%      {transform: rotate(30deg);}
+  80%      {transform: rotate(40deg);}
+  100%     {transform: rotate(50deg);}
+}
+
+.jogging #legs #rightLeg {
+  animation: joggingright 2s linear infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes joggingright {
+  0%, 100% {transform: rotate(0deg);}
+	40%      {transform: rotate(-30deg);}
+}
+
+.jogging #leftHand,
+.jogging #rightHand{
+  animation: joglefthand 5s linear infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes joglefthand {
+  0%, 100% {transform: rotate(0.5deg);}
+	50%      {transform: rotate(-0.5deg);}
+}
+
+.jogging #t-shirt {
+  animation: jogshirt 5s linear infinite;
+  transform-origin: bottom;
+}
+
+@keyframes jogshirt {
+  0%, 100% {transform: translateX(-2px)}
+	50%      {transform: translateX(0px)}
+}
+
+.autumn #redTree{
+  animation: autumnTree 5s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+ @keyframes autumnTree {
+  0%, 
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+.autumn #umbrella{
+  animation: autumnUmbrella 5s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes autumnUmbrella {
+  0%, 
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+.autumn #rightHand{
+  animation: autumnHandMove 5s linear infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes autumnHandMove {
+  0%, 
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+.autumn #squirrel{
+  animation: squirrelMove 5s linear infinite;
+  animation-delay: 5s;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes squirrelMove{
+  0%, 100% {  
+    opacity: 0;
+  }
+	50%      {
+    opacity: 1;
+  }
+
+}
+
+.autumn #leaf path{
+  animation: autumnLeaf 5s linear infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes autumnLeaf {
+  0% {transform:translate(0, 0) rotate(720deg)}
+  40% {transform:translate(0, 0) rotate(1080deg)}
+  80% {transform:translate(100px,100px) rotate(1440deg)}
+ 100% {transform:translate(250px,200px) rotate(1440deg)}
+}
+
+
+.autumn #rains path {
+  animation: autumnRain 5s linear infinite;
+  animation-delay: 0.5s;
+  transform:skew(3deg);
+}
+
+@keyframes autumnRain {
+  
+  0% {
+    transform: translateY(10px);
+  }
+  40% {
+    transform: translateY(20px);
+  }
+  60% {
+    transform: translateY(40px);
+  }
+  80% {
+    transform: translateY(60px);
+  }
+  100% {
+    transform: translateY(80px);
+  }
+  
+}
