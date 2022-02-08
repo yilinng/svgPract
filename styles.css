@@ -8,15 +8,26 @@
 :root {
   --dark-color: #635bff;
   --light-color:#80e9ff;
+  --border-color: #F0F0F0;
+  --heart-color: #D1D3D4;
 }
 
 body {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  height: 100vh;
   background: #dfdfdf;
+  margin: auto;
 }
+
+svg {
+  width:  auto;
+  height: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px 10px;
+}
+
 
 #giant-wheel {
   animation: wheel 12s linear infinite;
@@ -621,4 +632,244 @@ body {
     transform: translateY(80px);
   }
   
+}
+
+/* swing*/
+.swing #cloud path{
+  animation: swingCloud 10s linear infinite;
+  transform-origin: center;
+  animation-delay: 0.5s;
+  fill: #eee;
+
+}
+
+@keyframes swingCloud {
+  0%       {transform: translateX(-30px)}
+  20%      {transform: translateX(-25px)}
+  40%      {transform: translateX(-20px)}
+	60%      {transform: translateX(-15px)}
+  80%      {transform: translateX(-10px)}
+	100%      {transform: translateX(-5px)}
+}
+
+.swing #bird path{
+  animation: swingBird 10s linear infinite;
+  animation-delay: calc(var(--order) * 500ms);
+  fill: black;
+}
+
+@keyframes swingBird {
+ 
+  0% {
+		transform: scale(0.3) translateX(-10vw);
+	}
+	
+	10% {
+		transform: translateY(2vh) translateX(10vw) scale(0.4);
+	}
+	
+	20% {
+		transform: translateY(0vh) translateX(30vw) scale(0.5);
+	}
+	
+	30% {
+		transform: translateY(4vh) translateX(50vw) scale(0.6);
+	}
+	
+	40% {
+		transform: translateY(2vh) translateX(70vw) scale(0.6);
+	}
+	
+	50% {
+		transform: translateY(0vh) translateX(90vw) scale(0.6);
+	}
+	
+	60% {
+		transform: translateY(0vh) translateX(110vw) scale(0.6);
+	}
+	
+	100% {
+		transform: translateY(0vh) translateX(110vw) scale(0.6);
+	}
+}
+
+.swing #woman{
+  animation: swingwoman 5s linear infinite;
+  transform-box: fill-box;
+  transform-origin: top;
+}
+
+@keyframes swingwoman {
+  
+  0% {
+		transform: rotateZ(0deg);
+	}
+	
+	50% {
+		transform: rotateZ(10deg);
+	}
+	
+	100% {
+		transform: rotateZ(0deg);
+	}
+}
+
+.swing #grassRight path,
+.swing #grassLeft path
+{
+  animation: swinggrass 5s linear infinite;
+  transform-box: fill-box;
+  transform-origin: bottom;
+  fill: rgb(51, 153, 102);
+}
+
+@keyframes swinggrass {
+  0%, 
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+/*
+windowshop
+*/
+
+.windowShop #hand {
+  animation: shopHandMove 5s linear infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes shopHandMove {
+  0%, 
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+.windowShop #pantsBorder{
+  fill: #F0F0F0;
+}
+
+.windowShop #heart{
+  fill: var(--heart-color);
+}
+
+.windowShop #borderCheck{
+  fill: var(--border-color);
+}
+/*
+you would still like the element to occupy space
+*/
+.windowShop #checkMark{
+  visibility: hidden;
+}
+/*
+well-done
+*/
+.wellDone #ballon g{
+  animation: ballonMove 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--order) * 500ms);
+  animation-iteration-count: infinite;
+}
+
+@keyframes ballonMove {
+  0%,100%{ transform:translateY(0) rotate(-4deg); }
+  50%{ transform:translateY(-25px) rotate(4deg); }
+}
+
+.wellDone #rightredBallon{
+  animation: ballonMove 5s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+.wellDone #rightBallon{
+  animation: ballonMove 6s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+.wellDone #leftBallon{
+  animation: ballonMove 7s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+.wellDone #leftMan path{
+  animation: ballonHandMove 7s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes ballonHandMove{
+  20% {
+    transform: translateY(2%);
+  }
+
+  30%, 100% {
+    transform: translateY(0%);
+  }
+}
+
+.wellDone #rightMan path{
+  animation: ballonHandMove 6s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+.wellDone #centerMan path{
+  animation: ballonHandMove 5s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+.wellDone #bubble #Vector_7, 
+.wellDone #bubble #Vector_10,
+.wellDone #bubble #Vector_13  
+{
+  fill: rgba(63, 81, 181, 0.6);
+}
+
+.wellDone #bubble #Vector_8, 
+.wellDone #bubble #Vector_11,
+.wellDone #bubble #Vector_14  
+{
+  fill: #ffb200;
+}
+
+.wellDone #bubble #Vector_9, 
+.wellDone #bubble #Vector_12 
+{
+  fill: #008000;
+}
+
+.wellDone #bubble path {
+  animation: bubbleMove 5s linear infinite;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+@keyframes bubbleMove{
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 600px){
+  .container {
+    margin: auto;
+    grid-template-columns: auto;
+    gap: 25px 0;
+  }
 }
